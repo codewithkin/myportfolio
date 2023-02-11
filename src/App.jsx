@@ -7,17 +7,21 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import { animate, motion } from 'framer-motion'
 import { BiMenu } from 'react-icons/bi';
+import { AiOutlineClose } from 'react-icons/ai'
 
 function App() {
   const [showNav, setShowNav] = useState(false);
   const showNavBar = () => {
-    setShowNav(true)
+    if(showNav == false) setShowNav(true)
+    else {
+        setShowNav(false)
+    }
   }
 
   return (
     <section className="App">
       <section className="container flex gap-2">
-        <BiMenu className={ showNav ? 'hidden' : 'w-[2rem] h-[2rem] self-center block md:hidden' } onClick={() => showNavBar}/>
+        { showNav ? <AiOutlineClose className={ showNav ? 'w-[2rem] h-[2rem] self-center block md:hidden' : 'hidden' } onClick={showNavBar}/> : <BiMenu className={ showNav ? 'hidden' : 'w-[2rem] h-[2rem] self-center block md:hidden' } onClick={showNavBar}/>}
         <motion.h1 animate={{ fontSize: '1.75rem' }} className=' font-bold text-gray-800'>Kin Zinzombe</motion.h1>
       </section>
 
