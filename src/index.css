@@ -11,3 +11,11 @@ h2 {
 p {
     font-family: Inter, 'sans serif';
 }
+
+.desktop-links ul {
+    @apply flex gap-4 justify-center items-center
+}
+
+.desktop-links li {
+    @apply p-4 bg-gray-800 rounded-xl w-[10rem] h-[2rem] flex gap-4 justify-center items-center
+}
