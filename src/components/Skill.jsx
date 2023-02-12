@@ -1,19 +1,20 @@
 import { TiTick } from 'react-icons/ti';
+import { motion } from 'framer-motion';
 
-const Skill = ({ included, title, icon }) => {
+const Skill = ({ included, title, icon, scheme }) => {
     return ( 
-        <section className='grid align-middle justify-center items-center border border-black mt-4 mb-4 p-4'>
+        <motion.section whileHover={{ x: 10, y: 40 }} className='grid bg-slate-700 align-middle justify-center items-center rounded-2xl mt-4 mb-4 p-4'>
             <h2 className='self-center justify-self-center'>{ icon }</h2>
-            <p className='text-4xl'>{ title }</p>
+            <p style={{color: `${scheme}` }} className={`text-4xl`}>{ title }</p>
 
-            <article className="included grid ">
+            <article className="included grid mt-2">
                 {
                     included.map((inc) => (
-                        <p className='flex gap-1 justify-center items-center text-center text-black'><TiTick fill='green' className=''/> { inc }</p>
+                        <p className='flex gap-1 justify-center items-center text-center text-white'><TiTick fill='green' className=''/> { inc }</p>
                     ))
                 }
             </article>
-        </section>
+        </motion.section>
      );
 }
  

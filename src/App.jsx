@@ -70,7 +70,7 @@ function App() {
                       Only just recenty started to learn JavaScript Frameworks such as the Express framework on the NodeJS runtime and JavaScipt libraries such 
                       as the ReactJS library. I also use the TailwindCSS framework.
                     </span>
-                    <button className='block md:hidden justify-self-center self-center' onClick={handleShowMore}>Show { show }</button>
+                    <button className='block md:hidden justify-self-center self-center p-4 border border-gray-600 mt-2 rounded-xl hover:bg-gray-200 hover:text-black' onClick={handleShowMore}>Show { show }</button>
                     </p>
                 </article>
 
