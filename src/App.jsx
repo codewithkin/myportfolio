@@ -75,7 +75,7 @@ function App() {
                 </article>
 
                 <motion.article whileHover={{  x:-20, y:-10 }} className= " bg-white w-full h-full relative md:w-[30rem] flex flex-col justify-center align-middle rounded-xl justify-self-center">
-                    <section><img src='./src/assets/image.jpg' alt="developer" className="w-full md:h-[15rem] rounded-tl-xl rounded-tr-xl"/></section>
+                    <section><img src='https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1400&q=60' alt="developer" className="w-full md:h-[15rem] rounded-tl-xl rounded-tr-xl"/></section>
 
                     <section className=''>
                       <p className='text-black font-bold text-center p-4'>
