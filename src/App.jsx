@@ -20,10 +20,29 @@ function App() {
 
   return (
     <main className="App relative h-full">
-      <section className="container flex gap-2">
-      <BiMenu className={ showNav ? 'hidden' : 'w-[2rem] h-[2rem] self-center block md:hidden' } onClick={showNavBar}/>
-        <motion.h1 animate={{ fontSize: '1.75rem' }} className=' font-bold text-gray-800'>Kin Zinzombe</motion.h1>
-      </section>
+      <nav className="flex">
+        <section className="container flex gap-2">
+        <BiMenu className={ showNav ? 'hidden' : 'w-[2rem] h-[2rem] self-center block md:hidden' } onClick={showNavBar}/>
+          <motion.h1 animate={{ fontSize: '1.75rem' }} className=' font-bold text-gray-800 ml-4'>Kin Zinzombe</motion.h1>
+        </section>
+
+        <article className="mobile-links self-center">
+          <ul className='flex gap-4 text-xl mr-4'>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='services'>Services</Link>
+            </li>
+            <li>
+              <Link to='/exeperience'> Experience</Link>
+            </li>
+            <li>
+              <Link to='/contact'>Contact</Link>
+            </li>
+          </ul>
+        </article>
+      </nav>
 
         <header className="bg-black grid p-6 text-white">
                 <article className="text-center mb-2">
@@ -35,7 +54,7 @@ function App() {
                 </article>
 
                 <motion.article whileHover={{  x:-20, y:-10 }} className="bg-white flex flex-col justify-center align-middle rounded-xl justify-self-center">
-                    <section><img src='./src/assets/image.jpg' alt="developer" className="w-full h-[16rem] rounded-tl-xl rounded-tr-xl"/></section>
+                    <section><img src='./src/assets/image.jpg' alt="developer" className="w-full h-[20rem] rounded-tl-xl rounded-tr-xl"/></section>
 
                     <section className=''>
                       <p className='text-black font-bold text-center p-2'>
@@ -62,24 +81,6 @@ function App() {
                     </li>
                 </motion.ul>
       </article>
-
-      <motion.article animate={{ width: '100%' }} className={ showNav ? 'absolute top-0 bg-black h-3/4' : 'hidden' }>
-                <motion.ul className={ showNav ? 'block' : 'hidden' }>
-                  <AiOutlineClose fill='white' className={ showNav ? 'absolute w-[1.8rem] top-3 left-1 h-[1.8rem] self-center block md:hidden' : 'hidden' } onClick={showNavBar}/>
-                    <li className='text-xl underline  ml-12 text-gray-300 hover:text-gray-600 mb-12 mt-8'>
-                        <Link to='/'>Home</Link>
-                    </li>
-                    <li className='mb-16 text-xl underline  ml-12 text-gray-300 hover:text-gray-600'>
-                        <Link to='/services'>Services</Link>
-                    </li>
-                    <li className='mb-16 text-xl underline  ml-12 text-gray-300 hover:text-gray-600'>
-                        <Link to='/experience'>Experience</Link>
-                    </li>
-                    <li className=' text-xl underline  ml-12 text-gray-300 hover:text-gray-600 '>
-                        <Link to='/contact'>Contact</Link>
-                    </li>
-                </motion.ul>
-      </motion.article>
 
       <Routes>
         <Route path='/' element={<Home/>} />
