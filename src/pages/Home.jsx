@@ -2,8 +2,13 @@ import { motion } from "framer-motion";
 import Skill from "../components/Skill";
 import { SiReact, SiExpress, SiMongodb } from 'react-icons/si';
 import { GrNode } from 'react-icons/gr';
+import { MdMessage } from 'react-icons/md'
+import { useState } from "react";
 
 const Home = () => {
+    const [email, setEmail]  = useState('');
+    const [message, setMessage] = useState('');
+
     const Skills = [
         {
             title: "React",
@@ -58,6 +63,10 @@ const Home = () => {
         }
     ]
 
+    const handleEmailSend = () => {
+
+    }
+
     return ( 
         <section>
             <section className="tech-stack grid align-middle justify-center text-center">
@@ -91,7 +100,24 @@ const Home = () => {
             </section>
 
             <section>
-                <form action=""></form>
+                <form onSubmit={ handleEmailSend } className="grid grid-rows-3 gap-2 justify-center items-center">
+                    <h2 className="text-3xl  text-center mt-4">Contact me</h2>
+                    <input
+                    type="text"
+                    placeholder="Enter your message...."
+                    onChange={(e) => setMessage(e.target.value)}
+                    value={ message }
+                    className='border border-gray-400 w-[20rem] rounded-xl self-center justify-self-center p-2 '
+                    />
+                    <input 
+                    type='email'
+                    placeholder="Your email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={ email }
+                    className='border border-gray-400 w-[20rem] rounded-xl self-center justify-self-center p-2 '
+                    />
+                <button type="submit" className="border border-black rounded-xl p-2 hover:text-white hover:bg-black w-[8rem] justify-self-center self-center">Send email<MdMessage size='5'/></button>
+                </form>
             </section>
         </section>
      );
