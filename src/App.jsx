@@ -7,9 +7,10 @@ import Home from './pages/Home'
 import Services from './pages/Services'
 import { animate, motion } from 'framer-motion'
 import { BiMenu } from 'react-icons/bi';
-import { AiOutlineClose } from 'react-icons/ai'
+import { AiOutlineClose, AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 
 function App() {
+  const [icon, setIcon] = useState(<AiOutlineArrowDown size='25' fill='white'/>);
   const [show, setShow] = useState('more');
   const [showNav, setShowNav] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -22,10 +23,12 @@ function App() {
 
   const handleShowMore = () => {
     if(!showMore) { 
+      setIcon(<AiOutlineArrowUp size='25' fill='white'/>)
       setShowMore(true)
-      setShow('less')
+      setShow('less ')
     } else {
       setShowMore(false)
+      setIcon(<AiOutlineArrowDown size='25' fill='white'/>)
       setShow('more')
     }
   }
@@ -70,7 +73,7 @@ function App() {
                       Only just recenty started to learn JavaScript Frameworks such as the Express framework on the NodeJS runtime and JavaScipt libraries such 
                       as the ReactJS library. I also use the TailwindCSS framework.
                     </span>
-                    <button className='block md:hidden align-middle p-4 border border-gray-600 mt-2 rounded-xl hover:bg-gray-200 hover:text-black' onClick={handleShowMore}>Show { show }</button>
+                    <button className='block md:hidden align-middle p-4 border flex gap-2 border-gray-600 mt-2 rounded-xl hover:bg-gray-600 hover:text-black' onClick={handleShowMore}>Show { show } { icon }</button>
                     </p>
                 </article>
 
