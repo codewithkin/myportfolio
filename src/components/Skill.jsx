@@ -1,10 +1,12 @@
 import { TiTick } from 'react-icons/ti';
 import { motion } from 'framer-motion';
+import Badge from './Badge';
 
 const Skill = ({ included, title, icon, scheme }) => {
     return ( 
-        <motion.section whileHover={{ x: 10, y: 40 }} className='grid bg-slate-700 align-middle justify-center items-center rounded-2xl mt-4 mb-4 p-4'>
-            <h2 className='self-center justify-self-center'>{ icon }</h2>
+        <motion.section whileHover={{ x: 10, y: 40 }} className=' relative grid bg-slate-700 align-middle justify-center items-center rounded-2xl mt-4 mb-4 p-4'>
+            <Badge />
+            <h2 className='self-center justify-self-center mt-2'>{ icon }</h2>
             <p style={{color: `${scheme}` }} className={`text-4xl`}>{ title }</p>
 
             <article className="included grid mt-2">
