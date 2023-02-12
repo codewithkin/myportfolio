@@ -71,6 +71,10 @@ const Home = () => {
                     }
                 </section>
             </section>
+
+            <section id="about bg-black">
+                <h2 className="text-white">About</h2>
+            </section>
         </section>
      );
 }
