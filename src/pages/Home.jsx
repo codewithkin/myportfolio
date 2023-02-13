@@ -115,7 +115,7 @@ const Home = () => {
                 <form ref={form} onSubmit={handleEmailSend} className="grid gap-4">
                     <h2 className="text-4xl text-center p-4 ">Contact me</h2>
                     <article className="  p-2 w-[20rem] flex">
-                        <MdMessage size='42' fill='red' className="border-r-none p-2 border border-gray-400 rounded-tl-xl w-[4.2rem] rounded-bl-xl"/>
+                        <MdMessage size='42' className="border-r-none p-2 border border-gray-400 rounded-tl-xl w-[4.2rem] rounded-bl-xl"/>
                         <input type="email"
                         placeholder="Enter your email"
                         onChange={(e) => setEmail(e.target.value)}
@@ -126,7 +126,7 @@ const Home = () => {
                     </article>
 
                     <article className=" p-2 w-[20rem] flex ">
-                    <MdMessage size='42' fill='red' className="border-r-none p-2 border border-gray-400 rounded-tl-xl w-[4.2rem] rounded-bl-xl h-[4rem]"/>
+                    <MdMessage size='38' className="border-r-none p-2 border border-gray-400 rounded-tl-xl w-[4.2rem] rounded-bl-xl h-[4rem]"/>
                         <textarea
                         placeholder="Enter your message..."
                         onChange={(e) => setMessage(e.target.value)}
