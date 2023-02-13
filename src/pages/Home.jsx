@@ -10,6 +10,7 @@ const Home = () => {
     const form = useRef()
     const [email, setEmail]  = useState('');
     const [message, setMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const Skills = [
         {
@@ -68,8 +69,15 @@ const Home = () => {
     const handleEmailSend = (e) => {
         e.preventDefault()
         emailjs.sendForm('service_ok97ds6', 'tmp', form.current, 'U4uYOKiMDLdn5CEgx')
-        .then((result) => console.log(result.text))
-        .catch((err) => console.log(err.text))
+        .then((result) => {
+            console.log(result.text)
+            setErrorMessage('Your message has been received, we will get back to you shortly')   
+        })
+        .catch((err) => 
+               {
+                console.log(err.text)
+                setErrorMessage(err.text)
+               })
     }
 
     return ( 
@@ -129,6 +137,7 @@ const Home = () => {
                     </article>
 
                     <button onSubmit={handleEmailSend} className="p-2 border border-black text-gray-700 hover:bg-black hover:text-white">Send</button>
+                    <p>{ errorMessage }</p>
                 </form>
             </section>
         </section>
