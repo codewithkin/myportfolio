@@ -62,7 +62,7 @@ function App() {
 
                     <section className=''>
                       <p className='text-black font-bold text-center p-4'>
-                        When I'm not busy reversing a string or connecting a client's website to a databse I enjoy <span className='text-red-800'>writing</span>,
+                        When I'm not busy reversing a string or connecting a client's website to a database I enjoy <span className='text-red-800'>writing</span>,
                         <span className='text-red-800'>reading</span> and <span className='text-red-800'> exercising.</span> I write poetry, mystery books, 
                         and blog entries to share my coding experiences with other programmers and to track my coding career.
                       </p>
