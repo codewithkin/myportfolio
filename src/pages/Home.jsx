@@ -19,7 +19,7 @@ const Home = () => {
                 'Project Testing',
                 'Deployment',
                 'Animations',
-                'Userr Interface development',
+                'User Interface development',
                 'User Experience'
             ],
             scheme: 'cyan',
