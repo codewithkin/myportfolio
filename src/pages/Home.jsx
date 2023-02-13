@@ -119,7 +119,7 @@ const Home = () => {
 
                     <article className=" p-2 w-[20rem] flex ">
                     <MdMessage size='42' fill='red' className="border-r-none p-2 border border-gray-400 rounded-tl-xl w-[4.2rem] rounded-bl-xl"/>
-                        <input type="text"
+                        <textarea
                         placeholder="Enter your message..."
                         onChange={(e) => setMessage(e.target.value)}
                         value={ message }
