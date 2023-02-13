@@ -60,7 +60,7 @@ function App() {
       </nav>
 
         <header className="bg-black relative md:flex md:justify-between grid p-6 text-white">
-                <article className="text-center grid mb-2 md:w-[50rem] p-5">
+                <article className="text-center flex flex-col justify-center items-center align-middle mb-2 md:w-[50rem] p-5">
                     <p className="text-xl">
                     I'm Kin, I am a full stack developer specializing in the MERN stack. I use javascript frameworks and
                     libraries such as React, Express, and Framer motion
@@ -73,8 +73,8 @@ function App() {
                       Only just recenty started to learn JavaScript Frameworks such as the Express framework on the NodeJS runtime and JavaScipt libraries such 
                       as the ReactJS library. I also use the TailwindCSS framework.
                     </span>
-                    <button className='block md:hidden align-middle p-4 border flex gap-2 border-gray-600 mt-2 rounded-xl hover:bg-gray-600 hover:text-black' onClick={handleShowMore}>Show { show } { icon }</button>
                     </p>
+                    <button className='block md:hidden align-middle p-4 border flex gap-2 text-center self-center border-gray-600 mt-2 rounded-xl hover:bg-gray-400 hover:text-black w-[10rem]' onClick={handleShowMore}>Show { show } { icon }</button>
                 </article>
 
                 <motion.article whileHover={{  x:-20, y:-10 }} className= " bg-white w-full h-full relative md:w-[30rem] flex flex-col justify-center align-middle rounded-xl justify-self-center">
