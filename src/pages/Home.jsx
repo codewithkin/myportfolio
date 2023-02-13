@@ -3,10 +3,11 @@ import Skill from "../components/Skill";
 import { SiReact, SiExpress, SiMongodb } from 'react-icons/si';
 import { GrNode } from 'react-icons/gr';
 import { MdMessage } from 'react-icons/md'
-import { useState } from "react";
-//import { emailjs } from 'emailjs';
+import { useRef, useState } from "react";
+import emailjs from 'emailjs-com';
 
 const Home = () => {
+    const form = useRef()
     const [email, setEmail]  = useState('');
     const [message, setMessage] = useState('');
 
@@ -64,13 +65,16 @@ const Home = () => {
         }
     ]
 
-    const handleEmailSend = () => {
-        //emailjs.sendForm
+    const handleEmailSend = (e) => {
+        e.preventDefault()
+        emailjs.sendForm('service_ok97ds6', 'tmp', form.current, 'U4uYOKiMDLdn5CEgx')
+        .then((result) => console.log(result.text))
+        .catch((err) => console.log(err.text))
     }
 
     return ( 
         <section>
-            <section className="tech-stack grid align-middle justify-center text-center">
+            <section id="exp" className="tech-stack grid align-middle justify-center text-center">
                 <h3  className="text-4xl mt-4 font-bold">My skills</h3>
 
                 <section className="md:grid md:grid-cols-2 md:grid-rows-2 gap-14">
@@ -99,8 +103,8 @@ const Home = () => {
                 </section>
             </section>
 
-            <section className="grid items-center justify-center mb-4 ">
-                <form onSubmit={handleEmailSend} className="grid gap-4">
+            <section id="contact" className="grid items-center justify-center mb-4 ">
+                <form ref={form} onSubmit={handleEmailSend} className="grid gap-4">
                     <h2 className="text-4xl text-center p-4 ">Contact me</h2>
                     <article className="  p-2 w-[20rem] flex">
                         <MdMessage size='42' fill='red' className="border-r-none p-2 border border-gray-400 rounded-tl-xl w-[4.2rem] rounded-bl-xl"/>
@@ -120,7 +124,7 @@ const Home = () => {
                         onChange={(e) => setMessage(e.target.value)}
                         value={ message }
                         className="border border-gray-400 p-2 rounded-tr-xl rounded-br-xl w-[20rem]"
-                        name="sender_message"
+                        name="message"
                         />
                     </article>
 

@@ -1,13 +1,9 @@
 import { useState } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
-import reactLogo from './assets/react.svg'
-import Contact from './pages/Contact'
-import Experience from './pages/Experience'
-import Home from './pages/Home'
-import Services from './pages/Services'
 import { animate, motion } from 'framer-motion'
 import { BiMenu } from 'react-icons/bi';
 import { AiOutlineClose, AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
+import Home from './pages/Home';
 
 function App() {
   const [icon, setIcon] = useState(<AiOutlineArrowDown size='25' fill='white'/>);
@@ -37,26 +33,10 @@ function App() {
     <main className="App h-full">
       <nav className="flex ">
         <section className="container flex gap-2">
-        <BiMenu className={ showNav ? 'hidden' : 'w-[2rem] h-[2rem] self-center block md:hidden' } onClick={showNavBar}/>
           <motion.h1 animate={{ fontSize: '1.75rem' }} className=' font-bold text-gray-800 ml-4'>Kin Zinzombe</motion.h1>
         </section>
 
-        <article className="mobile-links hidden md:block self-center">
-          <ul className='flex gap-4 text-xl mr-4'>
-            <li>
-              <Link to='/' className='text-gray-700 hover:text-gray-400'>Home</Link>
-            </li>
-            <li>
-              <Link to='services' className='text-gray-700 hover:text-gray-400'>Services</Link>
-            </li>
-            <li>
-              <Link to='/exeperience' className='text-gray-700 hover:text-gray-400'> Experience</Link>
-            </li>
-            <li>
-              <Link to='/contact' className='text-gray-700 hover:text-gray-400'>Contact</Link>
-            </li>
-          </ul>
-        </article>
+        
       </nav>
 
         <header className="bg-black relative md:flex md:justify-between grid p-6 text-white">
@@ -88,32 +68,9 @@ function App() {
                       </p>
                     </section>
                 </motion.article>
+
         </header>
-
-        <article className={ showNav ? 'block absolute top-0 left-0 h-[48rem]  w-3/4 bg-black' : 'hidden' }>
-                  <AiOutlineClose fill='white' onClick={ showNavBar } size='28' className='mt-4 ml-4'/>
-                  <ul className='text-2xl  grid gap-20'>
-                    <li className='ml-5 mt-4'>
-                      <Link to='/' className='underline text-gray-700 hover:text-gray-200'>Home</Link>
-                    </li>
-                    <li className='ml-5'>
-                      <Link to='services' className='underline text-gray-700 hover:text-gray-200 '>Services</Link>
-                    </li>
-                    <li className='ml-5'>
-                      <Link to='/exeperience' className='underline text-gray-700 hover:text-gray-200 '> Experience</Link>
-                    </li>
-                    <li className='ml-5'>
-                      <Link to='/contact' className='underline text-gray-700 hover:text-gray-200'>Contact</Link>
-                    </li>
-                  </ul>
-                </article>
-
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/services' element={<Services/>} />
-        <Route path='/experience' element={<Experience/>} />
-        <Route path='/contact' element={<Contact/>} />
-      </Routes>
+        <Home/>
     </main>
   )
 }
